@@ -1,0 +1,14 @@
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\bin\Debug\net8.0\LogisticsManagement.DataAccess.deps.json
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\bin\Debug\net8.0\LogisticsManagement.DataAccess.runtimeconfig.json
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\bin\Debug\net8.0\LogisticsManagement.DataAccess.dll
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\bin\Debug\net8.0\LogisticsManagement.DataAccess.pdb
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.csproj.AssemblyReference.cache
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.AssemblyInfoInputs.cache
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.AssemblyInfo.cs
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.csproj.CoreCompileInputs.cache
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.dll
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\refint\LogisticsManagement.DataAccess.dll
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.pdb
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.genruntimeconfig.cache
+D:\major project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\ref\LogisticsManagement.DataAccess.dll

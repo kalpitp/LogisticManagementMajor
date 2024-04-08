@@ -41,13 +41,24 @@ namespace LogisticsManagement.DataAccess.Repository
         //Get user details by email id
         public async Task<User?> GetUserByEmailId(string emailid)
         {
-            return await _dbContext.Users.Include(u => u.Role).Include(u => u.UserDetails).Where(u => u.Email == emailid).FirstOrDefaultAsync();
+            try
+            {
+
+                return await _dbContext.Users.Include(u => u.Role)
+                                             .Include(u => u.UserDetails)
+                                             .ThenInclude(u => u.Address)
+                                             .ThenInclude(u => u.City)
+                                             .ThenInclude(u => u.State)
+                                             .ThenInclude(u => u.Country)
+                                             .Where(u => u.Email == emailid).FirstOrDefaultAsync();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An error occured while fetching user by email id\n" + e.Message);
+                return null;
+            }
         }
 
-        //Get user details by id
-        public async Task<User?> GetUserById(int userId)
-        {
-            return await _dbContext.Users.Include(u => u.UserDetails).Where(u => u.Id == userId).FirstOrDefaultAsync();
-        }
+
     }
 }

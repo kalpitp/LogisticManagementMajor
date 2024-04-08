@@ -2981,7 +2981,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "AutoMapper": "13.0.1",
-          "LogisticsManagement.DataAccess": "1.0.0"
+          "LogisticsManagement.DataAccess": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.3"
         },
         "compile": {
           "bin/placeholder/LogisticsManagement.Service.dll": {}

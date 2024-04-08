@@ -28,7 +28,7 @@ namespace LogisticsManagement.Service.DTOs
 
         public bool? IsAvailable { get; set; }
 
-        public bool? IsApproved { get; set; }
+        public int? IsApproved { get; set; }
 
         public bool? IsActive { get; set; }
 

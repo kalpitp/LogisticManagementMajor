@@ -63,7 +63,7 @@ public partial class LogisticsManagementContext : DbContext
     {
         modelBuilder.Entity<Address>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Address__3214EC074C71AFB0");
+            entity.HasKey(e => e.Id).HasName("PK__Address__3214EC0705318F04");
 
             entity.ToTable("Address");
 
@@ -92,7 +92,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<AssignmentStatus>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Assignme__3214EC077567BB11");
+            entity.HasKey(e => e.Id).HasName("PK__Assignme__3214EC070267F3E9");
 
             entity.ToTable("AssignmentStatus");
 
@@ -108,7 +108,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<Cart>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Cart__3214EC07B9C02408");
+            entity.HasKey(e => e.Id).HasName("PK__Cart__3214EC07ED9C3C60");
 
             entity.ToTable("Cart");
 
@@ -122,16 +122,16 @@ public partial class LogisticsManagementContext : DbContext
             entity.HasOne(d => d.Inventory).WithMany(p => p.Carts)
                 .HasForeignKey(d => d.InventoryId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Cart__InventoryI__02084FDA");
+                .HasConstraintName("FK__Cart__InventoryI__02FC7413");
 
             entity.HasOne(d => d.User).WithMany(p => p.Carts)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Cart__UserId__01142BA1");
+                .HasConstraintName("FK__Cart__UserId__02084FDA");
         });
 
         modelBuilder.Entity<City>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__City__3214EC075B5E3508");
+            entity.HasKey(e => e.Id).HasName("PK__City__3214EC07B529CD0A");
 
             entity.ToTable("City");
 
@@ -151,7 +151,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<Country>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Country__3214EC07611CA90E");
+            entity.HasKey(e => e.Id).HasName("PK__Country__3214EC07AA748BDF");
 
             entity.ToTable("Country");
 
@@ -167,7 +167,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<Inventory>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Inventor__3214EC075577D7A8");
+            entity.HasKey(e => e.Id).HasName("PK__Inventor__3214EC07A262F584");
 
             entity.ToTable("Inventory");
 
@@ -196,7 +196,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<InventoryCategory>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Inventor__3214EC076069DB8E");
+            entity.HasKey(e => e.Id).HasName("PK__Inventor__3214EC0709C04437");
 
             entity.ToTable("InventoryCategory");
 
@@ -212,7 +212,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<Order>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Orders__3214EC074FAAD258");
+            entity.HasKey(e => e.Id).HasName("PK__Orders__3214EC070D3E46AD");
 
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
@@ -232,7 +232,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<OrderDetail>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__OrderDet__3214EC0791C8C5F2");
+            entity.HasKey(e => e.Id).HasName("PK__OrderDet__3214EC075BAD3D32");
 
             entity.ToTable("OrderDetail");
 
@@ -273,7 +273,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<OrderStatus>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__OrderSta__3214EC07D801A36B");
+            entity.HasKey(e => e.Id).HasName("PK__OrderSta__3214EC07A287743D");
 
             entity.ToTable("OrderStatus");
 
@@ -289,7 +289,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<ResourceMapping>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Resource__3214EC074552D79F");
+            entity.HasKey(e => e.Id).HasName("PK__Resource__3214EC07AD72782E");
 
             entity.ToTable("ResourceMapping");
 
@@ -303,32 +303,32 @@ public partial class LogisticsManagementContext : DbContext
             entity.HasOne(d => d.AssignmentStatus).WithMany(p => p.ResourceMappings)
                 .HasForeignKey(d => d.AssignmentStatusId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ResourceM__Assig__18EBB532");
+                .HasConstraintName("FK__ResourceM__Assig__7D439ABD");
 
             entity.HasOne(d => d.Driver).WithMany(p => p.ResourceMappingDrivers)
                 .HasForeignKey(d => d.DriverId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ResourceM__Drive__160F4887");
+                .HasConstraintName("FK__ResourceM__Drive__7A672E12");
 
             entity.HasOne(d => d.Manager).WithMany(p => p.ResourceMappingManagers)
                 .HasForeignKey(d => d.ManagerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ResourceM__Manag__17036CC0");
+                .HasConstraintName("FK__ResourceM__Manag__7B5B524B");
 
             entity.HasOne(d => d.Order).WithMany(p => p.ResourceMappings)
                 .HasForeignKey(d => d.OrderId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ResourceM__Order__151B244E");
+                .HasConstraintName("FK__ResourceM__Order__797309D9");
 
             entity.HasOne(d => d.Vehicle).WithMany(p => p.ResourceMappings)
                 .HasForeignKey(d => d.VehicleId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ResourceM__Vehic__17F790F9");
+                .HasConstraintName("FK__ResourceM__Vehic__7C4F7684");
         });
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Role__3214EC073CD225F9");
+            entity.HasKey(e => e.Id).HasName("PK__Role__3214EC070D5E9CAC");
 
             entity.ToTable("Role");
 
@@ -344,7 +344,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<State>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__State__3214EC0774A9C259");
+            entity.HasKey(e => e.Id).HasName("PK__State__3214EC07891AE4A4");
 
             entity.ToTable("State");
 
@@ -364,7 +364,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<Transaction>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Transact__3214EC07A39721EE");
+            entity.HasKey(e => e.Id).HasName("PK__Transact__3214EC070E424F1B");
 
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
@@ -383,19 +383,19 @@ public partial class LogisticsManagementContext : DbContext
             entity.HasOne(d => d.Order).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.OrderId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Transacti__Order__07C12930");
+                .HasConstraintName("FK__Transacti__Order__08B54D69");
 
             entity.HasOne(d => d.User).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.UserId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Transacti__UserI__06CD04F7");
+                .HasConstraintName("FK__Transacti__UserI__07C12930");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07E5FDBD52");
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC070BCF8E9D");
 
-            entity.HasIndex(e => e.Email, "UQ__Users__A9D1053447B33A02").IsUnique();
+            entity.HasIndex(e => e.Email, "UQ__Users__A9D10534C22BCE94").IsUnique();
 
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("(getdate())")
@@ -423,7 +423,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<UserDetail>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UserDeta__3214EC0774BEE64F");
+            entity.HasKey(e => e.Id).HasName("PK__UserDeta__3214EC0780EEB6A0");
 
             entity.ToTable("UserDetail");
 
@@ -431,7 +431,7 @@ public partial class LogisticsManagementContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
-            entity.Property(e => e.IsApproved).HasDefaultValue(false);
+            entity.Property(e => e.IsApproved).HasDefaultValue(0);
             entity.Property(e => e.IsAvailable).HasDefaultValue(true);
             entity.Property(e => e.LicenseNumber)
                 .HasMaxLength(15)
@@ -453,7 +453,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<Vehicle>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Vehicle__3214EC071E223C63");
+            entity.HasKey(e => e.Id).HasName("PK__Vehicle__3214EC07BD3F5D9F");
 
             entity.ToTable("Vehicle");
 
@@ -480,7 +480,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<VehicleType>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__VehicleT__3214EC07CABC83AE");
+            entity.HasKey(e => e.Id).HasName("PK__VehicleT__3214EC07558548F3");
 
             entity.ToTable("VehicleType");
 
@@ -496,7 +496,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<Warehouse>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Warehous__3214EC07E01613F4");
+            entity.HasKey(e => e.Id).HasName("PK__Warehous__3214EC07A26F5F8F");
 
             entity.ToTable("Warehouse");
 
@@ -520,7 +520,7 @@ public partial class LogisticsManagementContext : DbContext
 
         modelBuilder.Entity<Wishlist>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Wishlist__3214EC07BEC3CFF3");
+            entity.HasKey(e => e.Id).HasName("PK__Wishlist__3214EC0797EEE0D3");
 
             entity.ToTable("Wishlist");
 
@@ -533,11 +533,11 @@ public partial class LogisticsManagementContext : DbContext
             entity.HasOne(d => d.Inventory).WithMany(p => p.Wishlists)
                 .HasForeignKey(d => d.InventoryId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Wishlist__Invent__0F624AF8");
+                .HasConstraintName("FK__Wishlist__Invent__10566F31");
 
             entity.HasOne(d => d.User).WithMany(p => p.Wishlists)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Wishlist__UserId__0E6E26BF");
+                .HasConstraintName("FK__Wishlist__UserId__0F624AF8");
         });
 
         OnModelCreatingPartial(modelBuilder);

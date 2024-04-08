@@ -3,36 +3,32 @@
   "WorkspaceRootPath": "D:\\Major Project\\LogisticsManagementSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.service\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|solutionrelative:logisticsmanagement.service\\services\\adminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.service\\services\\iservices\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|solutionrelative:logisticsmanagement.service\\services\\iservices\\iadminservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF1264BD-3EAD-4C8C-BC26-906D9FA57C21}|LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.dataaccess\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF1264BD-3EAD-4C8C-BC26-906D9FA57C21}|LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj|solutionrelative:logisticsmanagement.dataaccess\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80DD7356-265B-4F15-A65C-2DFFD5640FAC}|LogisticsManagement.WebAPI\\LogisticsManagement.WebAPI.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80DD7356-265B-4F15-A65C-2DFFD5640FAC}|LogisticsManagement.WebAPI\\LogisticsManagement.WebAPI.csproj|solutionrelative:logisticsmanagement.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{80DD7356-265B-4F15-A65C-2DFFD5640FAC}|LogisticsManagement.WebAPI\\LogisticsManagement.WebAPI.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{80DD7356-265B-4F15-A65C-2DFFD5640FAC}|LogisticsManagement.WebAPI\\LogisticsManagement.WebAPI.csproj|solutionrelative:logisticsmanagement.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.service\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|solutionrelative:logisticsmanagement.service\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{80DD7356-265B-4F15-A65C-2DFFD5640FAC}|LogisticsManagement.WebAPI\\LogisticsManagement.WebAPI.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.webapi\\controllers\\statisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80DD7356-265B-4F15-A65C-2DFFD5640FAC}|LogisticsManagement.WebAPI\\LogisticsManagement.WebAPI.csproj|solutionrelative:logisticsmanagement.webapi\\controllers\\statisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF1264BD-3EAD-4C8C-BC26-906D9FA57C21}|LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.dataaccess\\repository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF1264BD-3EAD-4C8C-BC26-906D9FA57C21}|LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj|solutionrelative:logisticsmanagement.dataaccess\\repository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.service\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|solutionrelative:logisticsmanagement.service\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80DD7356-265B-4F15-A65C-2DFFD5640FAC}|LogisticsManagement.WebAPI\\LogisticsManagement.WebAPI.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80DD7356-265B-4F15-A65C-2DFFD5640FAC}|LogisticsManagement.WebAPI\\LogisticsManagement.WebAPI.csproj|solutionrelative:logisticsmanagement.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.service\\convertors\\automapperconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|solutionrelative:logisticsmanagement.service\\convertors\\automapperconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.service\\services\\iservices\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|solutionrelative:logisticsmanagement.service\\services\\iservices\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF1264BD-3EAD-4C8C-BC26-906D9FA57C21}|LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.dataaccess\\repository\\irepository\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF1264BD-3EAD-4C8C-BC26-906D9FA57C21}|LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj|solutionrelative:logisticsmanagement.dataaccess\\repository\\irepository\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|d:\\major project\\logisticsmanagementsystem\\logisticsmanagement.service\\dtos\\signuprequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{059B524C-D218-4285-8F00-930488CE0FBA}|LogisticsManagement.Service\\LogisticsManagement.Service.csproj|solutionrelative:logisticsmanagement.service\\dtos\\signuprequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,8 +37,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 202,
-          "SelectedChildIndex": 6,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,106 +54,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserDTO.cs",
-              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\DTOs\\UserDTO.cs",
-              "RelativeDocumentMoniker": "LogisticsManagement.Service\\DTOs\\UserDTO.cs",
-              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\DTOs\\UserDTO.cs",
-              "RelativeToolTip": "LogisticsManagement.Service\\DTOs\\UserDTO.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAqwAgAAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T12:01:59.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "LogisticsManagement.Service\\Services\\AuthService.cs",
-              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\Services\\AuthService.cs",
-              "RelativeToolTip": "LogisticsManagement.Service\\Services\\AuthService.cs",
-              "ViewState": "AQIAAD4AAAAAAAAAAAAvwFsAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T11:59:58.444Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "AutoMapperConfig.cs",
-              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\Convertors\\AutoMapperConfig.cs",
-              "RelativeDocumentMoniker": "LogisticsManagement.Service\\Convertors\\AutoMapperConfig.cs",
-              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\Convertors\\AutoMapperConfig.cs",
-              "RelativeToolTip": "LogisticsManagement.Service\\Convertors\\AutoMapperConfig.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA5AAAA",
+              "Title": "StatisticsController.cs",
+              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\Controllers\\StatisticsController.cs",
+              "RelativeDocumentMoniker": "LogisticsManagement.WebAPI\\Controllers\\StatisticsController.cs",
+              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\Controllers\\StatisticsController.cs",
+              "RelativeToolTip": "LogisticsManagement.WebAPI\\Controllers\\StatisticsController.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T11:58:23.59Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "LogisticsManagement.WebAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "LogisticsManagement.WebAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwBYAAABIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T10:35:36.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\Services\\IServices\\IAuthService.cs",
-              "RelativeDocumentMoniker": "LogisticsManagement.Service\\Services\\IServices\\IAuthService.cs",
-              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\Services\\IServices\\IAuthService.cs",
-              "RelativeToolTip": "LogisticsManagement.Service\\Services\\IServices\\IAuthService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T09:54:08.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IAuthRepository.cs",
-              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\Repository\\IRepository\\IAuthRepository.cs",
-              "RelativeDocumentMoniker": "LogisticsManagement.DataAccess\\Repository\\IRepository\\IAuthRepository.cs",
-              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\Repository\\IRepository\\IAuthRepository.cs",
-              "RelativeToolTip": "LogisticsManagement.DataAccess\\Repository\\IRepository\\IAuthRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAsAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T09:10:52.209Z",
+              "WhenOpened": "2024-04-08T06:17:35.753Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AuthRepository.cs",
-              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\Repository\\AuthRepository.cs",
-              "RelativeDocumentMoniker": "LogisticsManagement.DataAccess\\Repository\\AuthRepository.cs",
-              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\Repository\\AuthRepository.cs",
-              "RelativeToolTip": "LogisticsManagement.DataAccess\\Repository\\AuthRepository.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAMwCUAAAAIAAAA",
+              "Title": "AdminRepository.cs",
+              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\Repository\\AdminRepository.cs",
+              "RelativeDocumentMoniker": "LogisticsManagement.DataAccess\\Repository\\AdminRepository.cs",
+              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\Repository\\AdminRepository.cs*",
+              "RelativeToolTip": "LogisticsManagement.DataAccess\\Repository\\AdminRepository.cs*",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAgwF0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T07:24:56.928Z",
+              "WhenOpened": "2024-04-08T05:22:19.704Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "LogisticsManagement.WebAPI\\Program.cs",
-              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\Program.cs",
-              "RelativeToolTip": "LogisticsManagement.WebAPI\\Program.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAABcAAABQAAAA",
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "LogisticsManagement.WebAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "LogisticsManagement.WebAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwCIAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-05T06:47:19.701Z",
+              "WhenOpened": "2024-04-08T05:09:27.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SignUpRequestDTO.cs",
+              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\DTOs\\SignUpRequestDTO.cs",
+              "RelativeDocumentMoniker": "LogisticsManagement.Service\\DTOs\\SignUpRequestDTO.cs",
+              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\DTOs\\SignUpRequestDTO.cs",
+              "RelativeToolTip": "LogisticsManagement.Service\\DTOs\\SignUpRequestDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T05:07:04.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "LogisticsManagement.WebAPI\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\Controllers\\UserController.cs*",
+              "RelativeToolTip": "LogisticsManagement.WebAPI\\Controllers\\UserController.cs*",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAQwJMAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T04:47:57.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IAdminService.cs",
+              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\Services\\IServices\\IAdminService.cs",
+              "RelativeDocumentMoniker": "LogisticsManagement.Service\\Services\\IServices\\IAdminService.cs",
+              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\Services\\IServices\\IAdminService.cs",
+              "RelativeToolTip": "LogisticsManagement.Service\\Services\\IServices\\IAdminService.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T04:47:42.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminService.cs",
+              "DocumentMoniker": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\Services\\AdminService.cs",
+              "RelativeDocumentMoniker": "LogisticsManagement.Service\\Services\\AdminService.cs",
+              "ToolTip": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\Services\\AdminService.cs",
+              "RelativeToolTip": "LogisticsManagement.Service\\Services\\AdminService.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAIwGgAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T04:47:51.378Z",
               "EditorCaption": ""
             }
           ]

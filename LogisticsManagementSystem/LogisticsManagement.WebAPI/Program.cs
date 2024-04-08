@@ -3,6 +3,7 @@ using LogisticsManagement.DataAccess.Models;
 using LogisticsManagement.DataAccess.Repository;
 using LogisticsManagement.DataAccess.Repository.IRepository;
 using LogisticsManagement.Service.Convertors;
+using LogisticsManagement.Service.DTOs;
 using LogisticsManagement.Service.Services;
 using LogisticsManagement.Service.Services.IServices;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -21,13 +22,19 @@ namespace LogisticsManagement.WebAPI
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddDbContext<LogisticsManagementContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("localConnectionString")));
-           
-            builder.Services.AddAutoMapper(typeof(AutoMapperConfig));
 
-            
+            var configuration = builder.Configuration;
+
+            builder.Services.AddDbContext<LogisticsManagementContext>(option => option.UseSqlServer(configuration.GetConnectionString("localConnectionString")));
+           
+            builder.Services.AddAutoMapper(typeof(ApplicationMapper));
+
+
             builder.Services.AddScoped<IAuthService,AuthService>();
             builder.Services.AddScoped<IAuthRepository, AuthRepository>();
+
+            builder.Services.AddScoped<IAdminRepository, AdminRepository>();
+            builder.Services.AddScoped<IAdminService, AdminService>();
 
 
             //JWT Configuration
@@ -39,12 +46,17 @@ namespace LogisticsManagement.WebAPI
             {
                 options.RequireHttpsMetadata=false;
                 options.SaveToken=true;
-                options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+                options.TokenValidationParameters = new TokenValidationParameters()
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration.GetValue<string>("JWTSecret"))),
-                    ValidateIssuer = false,
-                    ValidateAudience = false,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration.GetValue<string>("JWTSecret"))),
+                    ValidateIssuer = true,
+                    ValidIssuer = configuration["JWTIssuer"],
+
+                    ValidateAudience = true,
+                    ValidAudience = configuration["JWTAudience"],
+
+                    ClockSkew= TimeSpan.Zero
                 };
             });
 
@@ -57,6 +69,7 @@ namespace LogisticsManagement.WebAPI
                 app.UseSwaggerUI();
             }
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 

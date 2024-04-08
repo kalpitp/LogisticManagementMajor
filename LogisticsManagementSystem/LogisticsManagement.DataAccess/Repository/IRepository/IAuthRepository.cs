@@ -11,6 +11,6 @@ namespace LogisticsManagement.DataAccess.Repository.IRepository
     {
         Task<int> AddUser(User user, UserDetail userDetail); // Adding user to database
          Task<User?> GetUserByEmailId(string emailid);//Get user details by email id
-        Task<User?> GetUserById(int userId);//Get user details by  id
+
     }
 }

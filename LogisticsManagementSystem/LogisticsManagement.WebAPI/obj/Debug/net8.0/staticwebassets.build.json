@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YcQd9jX2GX0TkwPFW/4IkSewqxHczwtdBFHQkTOmQzs=",
+  "Hash": "ev5BH6mZ8RlrriW9vlcXfOw/oQAX4lpXOWKAPz6ZfoU=",
   "Source": "LogisticsManagement.WebAPI",
   "BasePath": "_content/LogisticsManagement.WebAPI",
   "Mode": "Default",
@@ -47,10 +47,10 @@
       "OriginalItemSpec": "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.3\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LogisticsManagement.WebAPI.styles.css",
+      "Identity": "D:\\Azure LMS\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LogisticsManagement.WebAPI.styles.css",
       "SourceId": "LogisticsManagement.WebAPI",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\Azure LMS\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/LogisticsManagement.WebAPI",
       "RelativePath": "LogisticsManagement.WebAPI.styles.css",
       "AssetKind": "All",
@@ -63,7 +63,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LogisticsManagement.WebAPI.styles.css"
+      "OriginalItemSpec": "D:\\Azure LMS\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\LogisticsManagement.WebAPI.styles.css"
     }
   ]
 }

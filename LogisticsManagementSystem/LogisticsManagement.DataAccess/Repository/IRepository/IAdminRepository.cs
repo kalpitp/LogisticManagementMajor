@@ -31,6 +31,8 @@ namespace LogisticsManagement.DataAccess.Repository.IRepository
         Task<Warehouse?> GetWarehouseById(int warehouseId); // Get warehouse by id
         Task<int> AddWarehouse(Warehouse warehouse); // Add warehouse
         Task<int> UpdateWarehouse(Warehouse warehouse); // Update warehouse
+
+        Task<int> UpdateWarehousePatch(Warehouse warehouse); // Update warehouse using patch
         Task<int> RemoveWarehouse(int warehouseId); // Remove warehouse
 
         Task<int> GetTotalWarehousesCount(); // Get total warehouses count

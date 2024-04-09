@@ -30,7 +30,7 @@ namespace LogisticsManagement.DataAccess.Repository
 
             catch (Exception)
             {
-                Console.WriteLine("An Error occured while adding user");
+                Console.WriteLine("An Error occurred while adding user");
                 return -2;
             }
 
@@ -50,11 +50,11 @@ namespace LogisticsManagement.DataAccess.Repository
                                              .ThenInclude(u => u.City)
                                              .ThenInclude(u => u.State)
                                              .ThenInclude(u => u.Country)
-                                             .Where(u => u.Email == emailid).FirstOrDefaultAsync();
+                                             .Where(u => u.Email == emailid && u.IsActive==true).FirstOrDefaultAsync();
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error occured while fetching user by email id\n" + e.Message);
+                Console.WriteLine("An error occurred while fetching user by email id\n" + e.Message);
                 return null;
             }
         }

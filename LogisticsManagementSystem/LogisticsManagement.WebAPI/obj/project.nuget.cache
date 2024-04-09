@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nkxITpiOVSHWAIcq6nMfrEGgT1rvCVt1NerAMSho8jC7iay09Qxp0Nrg/+V1opNAyUiQSCFTYjoO2MssHAEYyA==",
+  "dgSpecHash": "Y4bMVw6V3Th8xrKSIhx7ASf4aKRQwXOwdtkGKCWRT5VEww7Rog7cTOq8uBkVz8CyENreS3nwXW3KpCc0H4UQiQ==",
   "success": true,
   "projectFilePath": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.WebAPI\\LogisticsManagement.WebAPI.csproj",
   "expectedPackageFiles": [
@@ -65,7 +65,9 @@
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.3\\microsoft.aspnetcore.components.quickgrid.8.0.3.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid.entityframeworkadapter\\8.0.3\\microsoft.aspnetcore.components.quickgrid.entityframeworkadapter.8.0.3.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.aspnetcore.components.web\\8.0.3\\microsoft.aspnetcore.components.web.8.0.3.nupkg.sha512",
+    "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.3\\microsoft.aspnetcore.jsonpatch.8.0.3.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.aspnetcore.metadata\\8.0.3\\microsoft.aspnetcore.metadata.8.0.3.nupkg.sha512",
+    "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\8.0.3\\microsoft.aspnetcore.mvc.newtonsoftjson.8.0.3.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.24\\microsoft.aspnetcore.razor.language.6.0.24.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.build\\17.8.3\\microsoft.build.17.8.3.nupkg.sha512",
@@ -81,6 +83,7 @@
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.codeanalysis.razor\\6.0.24\\microsoft.codeanalysis.razor.6.0.24.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.codeanalysis.scripting.common\\4.8.0\\microsoft.codeanalysis.scripting.common.4.8.0.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.codeanalysis.workspaces.common\\4.8.0\\microsoft.codeanalysis.workspaces.common.4.8.0.nupkg.sha512",
+    "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.data.sqlclient\\5.1.5\\microsoft.data.sqlclient.5.1.5.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\5.1.1\\microsoft.data.sqlclient.sni.runtime.5.1.1.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.diasymreader\\2.0.0\\microsoft.diasymreader.2.0.0.nupkg.sha512",
@@ -126,6 +129,7 @@
     "C:\\Users\\kalpitp\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\mono.texttemplating\\2.3.1\\mono.texttemplating.2.3.1.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\kalpitp\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\nuget.common\\6.9.1\\nuget.common.6.9.1.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\nuget.configuration\\6.9.1\\nuget.configuration.6.9.1.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\nuget.dependencyresolver.core\\6.9.1\\nuget.dependencyresolver.core.6.9.1.nupkg.sha512",

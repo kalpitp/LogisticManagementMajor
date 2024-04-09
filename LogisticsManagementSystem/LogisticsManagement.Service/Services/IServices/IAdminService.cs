@@ -18,10 +18,14 @@ namespace LogisticsManagement.Service.Services.IServices
         Task<int> AssignManagerToWarehouseAsync(int managerId, int warehouseId); // Assign manager to warehouse
 
 
-        Task<List<Warehouse>?> GetAllWarehousesAsync(); // Get all warehouses
-        Task<Warehouse?> GetWarehouseByIdAsync(int warehouseId); // Get warehouse by id
-        Task<int> AddWarehouseAsync(Warehouse warehouse); // Add warehouse
-        Task<int> UpdateWarehouseAsync(Warehouse warehouse); // Update warehouse
+        Task<List<WarehouseDTO>?> GetAllWarehousesAsync(); // Get all warehouses
+        Task<WarehouseDTO?> GetWarehouseByIdAsync(int warehouseId); // Get warehouse by id
+        Task<int> AddWarehouseAsync(WarehouseDTO warehouse); // Add warehouse
+       
+        Task<int> UpdateWarehouseAsync(WarehouseDTO warehouse); // Update warehouse
+        
+        Task<int> UpdateWarehousePatchAsync(WarehouseDTO warehouse); // Update warehouse using patch
+        
         Task<int> RemoveWarehouseAsync(int warehouseId); // Remove warehouse
 
 

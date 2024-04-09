@@ -61,7 +61,7 @@ namespace LogisticsManagement.Service.Services
             catch (Exception ex)
             {
                 //Log Error
-                Console.WriteLine("Error occured while adding user" + ex.Message);
+                Console.WriteLine("Error occurred while adding user" + ex.Message);
 
             }
             return 0;
@@ -152,7 +152,7 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while generating token" + ex.Message);
+                Console.WriteLine("Error occurred while generating token" + ex.Message);
             }
             return null;
         }
@@ -181,7 +181,7 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while Generating hash" + ex.Message);
+                Console.WriteLine("Error occurred while Generating hash" + ex.Message);
                 return null;
             }
         }

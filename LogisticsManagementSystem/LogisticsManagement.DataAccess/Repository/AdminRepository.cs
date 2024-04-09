@@ -34,7 +34,7 @@ namespace LogisticsManagement.DataAccess.Repository
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error occured while fetching user user id \n" + e.Message);
+                Console.WriteLine("An error occurred while fetching user user id \n" + e.Message);
                 return null;
             }
         }
@@ -52,7 +52,7 @@ namespace LogisticsManagement.DataAccess.Repository
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error occured while fetching users by role id \n" + e.Message);
+                Console.WriteLine("An error occurred while fetching users by role id \n" + e.Message);
                 return new List<User>();
             }
         }
@@ -70,7 +70,7 @@ namespace LogisticsManagement.DataAccess.Repository
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error occured while fetching pending users by role id \n" + e.Message);
+                Console.WriteLine("An error occurred while fetching pending users by role id \n" + e.Message);
                 return [];
             }
         }
@@ -94,7 +94,7 @@ namespace LogisticsManagement.DataAccess.Repository
 
             catch (Exception)
             {
-                Console.WriteLine("An Error occured while updating user");
+                Console.WriteLine("An Error occurred while updating user");
                 return -1;
             }
         }
@@ -104,7 +104,8 @@ namespace LogisticsManagement.DataAccess.Repository
         {
             try
             {
-                User? user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == userIdToDelete);
+                User? user = await _dbContext.Users.Include(u => u.UserDetails)
+                    .FirstOrDefaultAsync(u => u.Id == userIdToDelete);
                 if (user != null)
                 {
                     user.IsActive = false;
@@ -120,7 +121,7 @@ namespace LogisticsManagement.DataAccess.Repository
             }
             catch (Exception e)
             {
-                Console.WriteLine("An Error occured while deleting user\n" + e.Message);
+                Console.WriteLine("An Error occurred while deleting user\n" + e.Message);
                 return -1;
             }
         }
@@ -141,7 +142,7 @@ namespace LogisticsManagement.DataAccess.Repository
             }
             catch (Exception e)
             {
-                Console.WriteLine("An Error occured while assigning manager to warehouse\n" + e.Message);
+                Console.WriteLine("An Error occurred while assigning manager to warehouse\n" + e.Message);
                 return -1;
             }
         }
@@ -156,7 +157,7 @@ namespace LogisticsManagement.DataAccess.Repository
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error occured while fetching total users count\n" + e.Message);
+                Console.WriteLine("An error occurred while fetching total users count\n" + e.Message);
                 return -1;
             }
         }
@@ -176,7 +177,7 @@ namespace LogisticsManagement.DataAccess.Repository
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error occured while fetching all warehouses\n" + e.Message);
+                Console.WriteLine("An error occurred while fetching all warehouses\n" + e.Message);
                 return null;
             }
         }
@@ -202,7 +203,7 @@ namespace LogisticsManagement.DataAccess.Repository
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error occured while fetching warehouse by id\n" + e.Message);
+                Console.WriteLine("An error occurred while fetching warehouse by id\n" + e.Message);
             }
             return null;
         }
@@ -228,14 +229,23 @@ namespace LogisticsManagement.DataAccess.Repository
         {
             try
             {
-                if (warehouse is not null)
+                if (warehouse is null)
                 {
-                    warehouse.UpdatedAt = DateTime.Now;
-                    _dbContext.Warehouses.Update(warehouse);
-                    int result = await _dbContext.SaveChangesAsync();
-                    return result > 0 ? warehouse.Id : 0;
+                    return 0;
                 }
-                return 0;
+
+
+                Warehouse? warehouseDetails = await _dbContext.Warehouses.Where(w => w.Id == warehouse.Id).FirstOrDefaultAsync();
+
+                if (warehouseDetails is null)
+                {
+                    return 0;
+                }
+
+                warehouseDetails.UpdatedAt = DateTime.Now;
+                _dbContext.Warehouses.Update(warehouseDetails);
+                int result = await _dbContext.SaveChangesAsync();
+                return result > 0 ? warehouse.Id : 0;
             }
             catch (Exception ex)
             {
@@ -244,6 +254,35 @@ namespace LogisticsManagement.DataAccess.Repository
             }
         }
 
+        //Update warehouse using Patch
+        public async Task<int> UpdateWarehousePatch(Warehouse warehouse)
+        {
+            try
+            {
+                if (warehouse is null)
+                {
+                    return 0;
+                }
+
+
+                Warehouse? warehouseDetails = await _dbContext.Warehouses.Where(w => w.Id == warehouse.Id).FirstOrDefaultAsync();
+
+                if (warehouseDetails is null)
+                {
+                    return 0;
+                }
+
+                warehouseDetails.UpdatedAt = DateTime.Now;
+                _dbContext.Entry(warehouse).State = EntityState.Modified;
+                int result = await _dbContext.SaveChangesAsync();
+                return result > 0 ? warehouse.Id : 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while updating warehouse: " + ex.Message);
+                return -1;
+            }
+        }
 
         //soft delete warehouse by making isactive = false
         public async Task<int> RemoveWarehouse(int warehouseId)
@@ -280,12 +319,17 @@ namespace LogisticsManagement.DataAccess.Repository
             }
             catch (Exception e)
             {
-                Console.WriteLine("An error occured while fetching total warehouse count \n" + e.Message);
+                Console.WriteLine("An error occurred while fetching total warehouse count \n" + e.Message);
                 return -1;
             }
         }
 
         #endregion
+
+
+
+        #region------------- Admin Statistics -------------
+
         public async Task<int> GetTotalOrdersCount()
         {
             return await _dbContext.Orders.CountAsync();
@@ -299,5 +343,7 @@ namespace LogisticsManagement.DataAccess.Repository
 
             return totalSalesAmount;
         }
+
+        #endregion
     }
 }

@@ -38,7 +38,7 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while getting user" + ex.Message);
+                Console.WriteLine("Error occurred while getting user" + ex.Message);
                 return null;
             }
         }
@@ -61,7 +61,7 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while getting users" + ex.Message);
+                Console.WriteLine("Error occurred while getting users" + ex.Message);
                 return null;
             }
 
@@ -85,7 +85,7 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while getting users" + ex.Message);
+                Console.WriteLine("Error occurred while getting users" + ex.Message);
                 return null;
             }
 
@@ -102,7 +102,7 @@ namespace LogisticsManagement.Service.Services
                     return -1;
                 }
                 User? user= await _adminRepository.GetUserById(userId);
-                if (user?.RoleId != (int)UserRoles.Manager || user.RoleId != (int)UserRoles.Driver)
+                if (user?.RoleId != (int)UserRoles.Manager && user.RoleId != (int)UserRoles.Driver)
                     return 0;
 
                     return await _adminRepository.UpdateSignUpRequest(userId, updatedStatus);
@@ -110,7 +110,7 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while updating user" + ex.Message);
+                Console.WriteLine("Error occurred while updating user" + ex.Message);
                 return -1;
             }
         }
@@ -129,7 +129,7 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while deleting user" + ex.Message);
+                Console.WriteLine("Error occurred while deleting user" + ex.Message);
                 return -1;
             }
         }
@@ -151,29 +151,35 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while assigning manager to warehouse" + ex.Message);
+                Console.WriteLine("Error occurred while assigning manager to warehouse" + ex.Message);
                 return -1;
             }
         }
 
         // Get All Warehouses
-        public async Task<List<Warehouse>?> GetAllWarehousesAsync()
+        public async Task<List<WarehouseDTO>?> GetAllWarehousesAsync()
         {
             try
             {
                 List<Warehouse>? warehouses = await _adminRepository.GetAllWarehouses();
-                return warehouses;
 
+                if(warehouses is null || warehouses.Count ==0)
+                {
+                    return [];
+                }
+
+                return _mapper.Map<List<WarehouseDTO>>(warehouses);
+               
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while getting all warehouses" + ex.Message);
+                Console.WriteLine("Error occurred while getting all warehouses" + ex.Message);
                 return null;
             }
         }
 
         // Get Warehouse By Id
-        public async Task<Warehouse?> GetWarehouseByIdAsync(int warehouseId)
+        public async Task<WarehouseDTO?> GetWarehouseByIdAsync(int warehouseId)
         {
             try
             {
@@ -181,45 +187,53 @@ namespace LogisticsManagement.Service.Services
                 {
                     return null;
                 }
-                return await _adminRepository.GetWarehouseById(warehouseId);
+                Warehouse? warehouse= await _adminRepository.GetWarehouseById(warehouseId);
+
+                if(warehouse is null)
+                { return null; }
+
+                return _mapper.Map<WarehouseDTO>(warehouse);
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while getting warehouse " + ex.Message);
+                Console.WriteLine("Error occurred while getting warehouse " + ex.Message);
                 return null;
             }
         }
 
         // Add Warehouse
-        public async Task<int> AddWarehouseAsync(Warehouse warehouse)
+        public async Task<int> AddWarehouseAsync(WarehouseDTO warehouse)
         {
             try
             {
                 if (warehouse == null)
                     return -1;
+                Warehouse newWarehouse= _mapper.Map<Warehouse>(warehouse);
 
-                int addedWarehouseId = await _adminRepository.AddWarehouse(warehouse);
+                int addedWarehouseId = await _adminRepository.AddWarehouse(newWarehouse);
 
                 return addedWarehouseId;
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while adding warehouse" + ex.Message);
+                Console.WriteLine("Error occurred while adding warehouse" + ex.Message);
                 return -1;
             }
         }
 
         // Update Warehouse
-        public async Task<int> UpdateWarehouseAsync(Warehouse warehouse)
+        public async Task<int> UpdateWarehouseAsync(WarehouseDTO warehouse)
         {
             try
             {
                 if (warehouse == null)
                     return -1;
 
-                int updatedWarehouseId = await _adminRepository.UpdateWarehouse(warehouse);
+                Warehouse updatedWarehouse = _mapper.Map<Warehouse>(warehouse);
+
+                int updatedWarehouseId = await _adminRepository.UpdateWarehouse(updatedWarehouse);
 
                 return updatedWarehouseId;
 
@@ -227,7 +241,30 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while updating warehouse" + ex.Message);
+                Console.WriteLine("Error occurred while updating warehouse" + ex.Message);
+                return -1;
+            }
+        }
+
+        // Update Warehouse using Patch
+        public async Task<int> UpdateWarehousePatchAsync(WarehouseDTO warehouse)
+        {
+            try
+            {
+                if (warehouse == null)
+                    return -1;
+
+                Warehouse updatedWarehouse = _mapper.Map<Warehouse>(warehouse);
+
+                int updatedWarehouseId = await _adminRepository.UpdateWarehousePatch(updatedWarehouse);
+
+                return updatedWarehouseId;
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while updating warehouse" + ex.Message);
                 return -1;
             }
         }
@@ -247,7 +284,7 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while removing warehouse" + ex.Message);
+                Console.WriteLine("Error occurred while removing warehouse" + ex.Message);
                 return -1;
             }
         }
@@ -278,7 +315,7 @@ namespace LogisticsManagement.Service.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occured while getting admin summary statistics" + ex.Message);
+                Console.WriteLine("Error occurred while getting admin summary statistics" + ex.Message);
                 return null;
             }
         }

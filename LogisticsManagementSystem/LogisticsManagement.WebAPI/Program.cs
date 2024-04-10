@@ -36,6 +36,9 @@ namespace LogisticsManagement.WebAPI
             builder.Services.AddScoped<IAdminRepository, AdminRepository>();
             builder.Services.AddScoped<IAdminService, AdminService>();
 
+            builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+            builder.Services.AddScoped<ICustomerService, CustomerService>();
+
 
             //JWT Configuration
             builder.Services.AddAuthentication(options =>

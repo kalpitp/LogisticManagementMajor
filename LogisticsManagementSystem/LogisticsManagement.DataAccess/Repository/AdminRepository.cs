@@ -105,7 +105,7 @@ namespace LogisticsManagement.DataAccess.Repository
             try
             {
                 User? user = await _dbContext.Users.Include(u => u.UserDetails)
-                    .FirstOrDefaultAsync(u => u.Id == userIdToDelete);
+                    .FirstOrDefaultAsync(u => u.Id == userIdToDelete && u.IsActive == true);
                 if (user != null)
                 {
                     user.IsActive = false;
@@ -213,7 +213,7 @@ namespace LogisticsManagement.DataAccess.Repository
         {
             try
             {
-                _dbContext.Warehouses.Add(warehouse);
+                await _dbContext.Warehouses.AddAsync(warehouse);
                 int result = await _dbContext.SaveChangesAsync();
                 return result > 0 ? warehouse.Id : 0;
             }
@@ -241,9 +241,15 @@ namespace LogisticsManagement.DataAccess.Repository
                 {
                     return 0;
                 }
+                //_dbContext.Entry(warehouseDetails).State = EntityState.Detached;
 
+                warehouseDetails.Name = warehouse.Name;
+                warehouseDetails.Address = warehouse.Address;
+                warehouseDetails.CityId = warehouse.CityId;
                 warehouseDetails.UpdatedAt = DateTime.Now;
-                _dbContext.Warehouses.Update(warehouseDetails);
+                //_dbContext.Warehouses.Update(warehouse);
+                //_dbContext.Warehouses.Attach(warehouse);
+                //_dbContext.Entry(warehouse).State = EntityState.Modified;
                 int result = await _dbContext.SaveChangesAsync();
                 return result > 0 ? warehouse.Id : 0;
             }
@@ -289,7 +295,7 @@ namespace LogisticsManagement.DataAccess.Repository
         {
             try
             {
-                var warehouse = await _dbContext.Warehouses.FindAsync(warehouseId);
+                var warehouse = await _dbContext.Warehouses.FirstOrDefaultAsync(w => w.Id == warehouseId && w.IsActive == true);
                 if (warehouse != null)
                 {
                     warehouse.IsActive = false;

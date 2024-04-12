@@ -50,14 +50,14 @@ namespace LogisticsManagement.Service.Services
                     return -1;
                 Address newAddress = _mapper.Map<Address>(address);
 
-                int addedWarehouseId = await _customerRepository.AddAddress(newAddress);
+                int addedAddressId = await _customerRepository.AddAddress(newAddress);
 
-                return addedWarehouseId;
+                return addedAddressId;
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error occurred while adding warehouse" + ex.Message);
+                Console.WriteLine("Error occurred while adding Address" + ex.Message);
                 return -1;
             }
         }
@@ -126,6 +126,26 @@ namespace LogisticsManagement.Service.Services
             {
                 Console.WriteLine("Error occurred while updating address" + ex.Message);
                 return -1;
+            }
+        }
+
+        public async Task<List<OrderDTO>?> ViewOrderDetails(int orderId)
+        {
+            try
+            {
+                List<OrderDetail> orderDetails = await _customerRepository.GetAllOrderDetails(orderId);
+
+                if (orderDetails is null || orderDetails.Count == 0)
+                {
+                    return null;
+                }
+
+                return _mapper.Map<List<OrderDTO>>(orderDetails);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while fetching the order details. " + ex.Message);
+                return null;
             }
         }
     }

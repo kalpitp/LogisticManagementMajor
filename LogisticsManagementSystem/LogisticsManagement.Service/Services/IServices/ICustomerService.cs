@@ -16,7 +16,7 @@ namespace LogisticsManagement.Service.Services.IServices
 
         Task<int> UpdateAddressAsync(AddressDTO address); // Update Address
 
-
+        Task<List<OrderDTO>?> ViewOrderDetails(int orderId);
         Task<int> RemoveAddressAsync(int addressId); // Remove Address
 
     }

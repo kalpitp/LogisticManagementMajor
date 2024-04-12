@@ -23,7 +23,7 @@ namespace LogisticsManagement.DataAccess.Repository
         {
             try
             {
-
+                // Admin
                 return await _dbContext.Users.Include(u => u.Role)
                                              .Include(u => u.UserDetails)
                                              .ThenInclude(u => u.Address)

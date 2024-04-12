@@ -15,5 +15,7 @@ namespace LogisticsManagement.DataAccess.Repository.IRepository
         Task<int> UpdateAddress(Address address); // Update Address
 
         Task<int> RemoveAddress(int addressId); // Remove Address
+
+        Task<List<OrderDetail>> GetAllOrderDetails(int orderId);
     }
 }

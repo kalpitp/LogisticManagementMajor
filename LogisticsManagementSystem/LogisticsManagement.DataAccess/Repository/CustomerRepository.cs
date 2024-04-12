@@ -29,6 +29,7 @@ namespace LogisticsManagement.DataAccess.Repository
                 }
 
                 await _dbContext.Addresses.AddAsync(address);
+
                 int result = await _dbContext.SaveChangesAsync();
 
                 if (result == 0)
@@ -107,16 +108,13 @@ namespace LogisticsManagement.DataAccess.Repository
                     return 0;
                 }
 
-                //addressDetails.Address1 = address.Address1;
-                //addressDetails.Pincode = address.Pincode;
-                //addressDetails.CityId = address.CityId;
-                //addressDetails.UpdatedAt = DateTime.Now;
 
-                //_dbContext.Addresses.Update(addressDetails);
-                
-                _dbContext.Addresses.Attach(address);
 
-                _dbContext.Entry(address).State= EntityState.Modified;
+                _dbContext.Entry(addressDetails).CurrentValues.SetValues(address);
+                _dbContext.Entry(addressDetails).Property(x => x.UserId).IsModified = false;
+                _dbContext.Entry(addressDetails).Property(x => x.IsActive).IsModified = false;
+                _dbContext.Entry(addressDetails).Property(x => x.CreatedAt).IsModified = false;
+
                 int result = await _dbContext.SaveChangesAsync();
                 return result > 0 ? address.Id : 0;
             }
@@ -138,12 +136,19 @@ namespace LogisticsManagement.DataAccess.Repository
                 {
                     address.IsActive = false;
                     address.UpdatedAt = DateTime.Now;
-                    address.UserDetails.FirstOrDefault().AddressId = null;
+                    
+                    UserDetail? userDetail = _dbContext.UserDetails.FirstOrDefault(u => u.UserId == address.UserId);
+
+                    if (userDetail == null)
+                    {
+                        return -2;
+                    }
+                    userDetail.AddressId = null;
                     int result = await _dbContext.SaveChangesAsync();
 
                     //if (result > 0)
                     //{
-                    //    UserDetail? userDetail = _dbContext.UserDetails.FirstOrDefault(u => u.Id == address.UserId);
+                    //    UserDetail? userDetail = _dbContext.UserDetails.FirstOrDefault(u => u.UserId == address.UserId);
 
                     //    if (userDetail == null)
                     //    {
@@ -161,6 +166,31 @@ namespace LogisticsManagement.DataAccess.Repository
             {
                 Console.WriteLine("An error occurred while deleting address: " + ex.Message);
                 return -1;
+            }
+        }
+
+        public async Task<List<OrderDetail>> GetAllOrderDetails(int orderId)
+        {
+            try
+            {
+                List<OrderDetail> orderDetails = await _dbContext.OrderDetails
+                    .Include(i => i.Inventory)
+                    .Include(s => s.OrderStatus)
+                    .Include(o => o.Order)
+                    .ThenInclude(u => u.User)
+                    .ThenInclude(u => u.UserDetails)
+                    .ThenInclude(a => a.Address)
+                    .ThenInclude(c => c.City)
+                    .ThenInclude(s => s.State)
+                    .ThenInclude(c => c.Country)
+                    .Where(o => o.OrderId == orderId).ToListAsync();
+
+                return orderDetails;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while fetching order details. " + ex.Message);
+                return null;
             }
         }
     }

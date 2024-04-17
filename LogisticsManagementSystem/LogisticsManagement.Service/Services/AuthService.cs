@@ -76,7 +76,7 @@ namespace LogisticsManagement.Service.Services
 
             string hashedPassword = GenerateHashPassword(login.Password);
             // check if user exists and password is same as hashed password
-            if (user is not null && user.Password == hashedPassword)
+            if (user is not null && user.Password == hashedPassword && user.IsActive== true)
             {
                 int isApproved = (int)user.UserDetails.FirstOrDefault().IsApproved;
 

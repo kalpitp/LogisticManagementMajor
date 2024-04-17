@@ -27,3 +27,17 @@ I:\Cybage\Major Project\LogisticsManagementSystem\LogisticsManagement.DataAccess
 I:\Cybage\Major Project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.pdb
 I:\Cybage\Major Project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.genruntimeconfig.cache
 I:\Cybage\Major Project\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\ref\LogisticsManagement.DataAccess.dll
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\bin\Debug\net8.0\LogisticsManagement.DataAccess.deps.json
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\bin\Debug\net8.0\LogisticsManagement.DataAccess.runtimeconfig.json
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\bin\Debug\net8.0\LogisticsManagement.DataAccess.dll
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\bin\Debug\net8.0\LogisticsManagement.DataAccess.pdb
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.csproj.AssemblyReference.cache
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.AssemblyInfoInputs.cache
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.AssemblyInfo.cs
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.csproj.CoreCompileInputs.cache
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.dll
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\refint\LogisticsManagement.DataAccess.dll
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.pdb
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\LogisticsManagement.DataAccess.genruntimeconfig.cache
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\obj\Debug\net8.0\ref\LogisticsManagement.DataAccess.dll

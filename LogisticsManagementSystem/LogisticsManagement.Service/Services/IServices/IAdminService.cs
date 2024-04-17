@@ -15,6 +15,8 @@ namespace LogisticsManagement.Service.Services.IServices
         Task<List<UserDTO>> GetPendingUsersByRoleAsync(int roleId); // Get manager or driver whose approval is pending
         Task<int> UpdateUserSignUpRequestAsync(int userId, int updatedStatus); // Approve or reject user sign up request
         Task<int> DeleteUserAsync(int userId); // Delete user
+        Task<int> UnBlockUserById(int userId);
+
         Task<int> AssignManagerToWarehouseAsync(int managerId, int warehouseId); // Assign manager to warehouse
 
 

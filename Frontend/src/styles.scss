@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import "ngx-toastr/toastr";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none !important;
+  color: black;
+}
+
+li {
+  list-style-type: none !important;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-icon:hover {
+  cursor: pointer;
+}

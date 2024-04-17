@@ -67,6 +67,14 @@ namespace LogisticsManagement.WebAPI
             });
 
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("corsPolicy", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+                });
+            });
+
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
@@ -75,6 +83,7 @@ namespace LogisticsManagement.WebAPI
                 app.UseSwaggerUI();
             }
 
+            app.UseCors("corsPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
 

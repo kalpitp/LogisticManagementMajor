@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LogisticsManagement.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3ed3c0cd157590315a0f6fc47e0ce7d57f699e4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+17bc05b17c52774088c873c4d31a45dbb1042460")]
 [assembly: System.Reflection.AssemblyProductAttribute("LogisticsManagement.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LogisticsManagement.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

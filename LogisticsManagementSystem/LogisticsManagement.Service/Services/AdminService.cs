@@ -134,6 +134,24 @@ namespace LogisticsManagement.Service.Services
             }
         }
 
+
+        public async Task<int> UnBlockUserById(int userId)
+        {
+            try
+            {
+                // check if userId is valid
+                if (userId <= 0)
+                {
+                    return -1;
+                }
+                return await _adminRepository.UnBlockUserById(userId);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while unblocking user" + ex.Message);
+                return -1;
+            }
+        }
         // Assign Manager to Warehouse
         public async Task<int> AssignManagerToWarehouseAsync(int managerId, int warehouseId)
         {

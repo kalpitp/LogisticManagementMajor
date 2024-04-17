@@ -182,7 +182,38 @@ namespace LogisticsManagement.WebAPI.Controllers
                 {
                     return StatusCode(StatusCodes.Status500InternalServerError, ApiResponseHelper.Response(false, HttpStatusCode.InternalServerError, error: "Failed to delete user. Please try again later"));
                 }
-                return Ok(ApiResponseHelper.Response(true, HttpStatusCode.OK, data: "User deleted successfully"));
+                return Ok(ApiResponseHelper.Response(true, HttpStatusCode.OK, data: "User blocked successfully"));
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ApiResponseHelper.Response(false, HttpStatusCode.InternalServerError, error: ex.Message));
+            }
+        }
+
+        [HttpPut("activate/{userId}", Name = "UnblockUser")]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> UnblockUser(int userId)
+        {
+            try
+            {
+                if (userId <= 0)
+                {
+                    return BadRequest(ApiResponseHelper.Response(false, HttpStatusCode.BadRequest, error: "Please enter valid id"));
+                }
+                int response = await _adminService.UnBlockUserById(userId);
+                if (response == 0)
+                {
+                    return NotFound(ApiResponseHelper.Response(false, HttpStatusCode.NotFound, error: "User with given id not found"));
+                }
+                if (response == -1)
+                {
+                    return StatusCode(StatusCodes.Status500InternalServerError, ApiResponseHelper.Response(false, HttpStatusCode.InternalServerError, error: "Failed to unblock user. Please try again later"));
+                }
+                return Ok(ApiResponseHelper.Response(true, HttpStatusCode.OK, data: "User unblocked successfully"));
 
             }
             catch (Exception ex)

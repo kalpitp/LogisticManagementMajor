@@ -126,6 +126,33 @@ namespace LogisticsManagement.DataAccess.Repository
             }
         }
 
+        public async Task<int> UnBlockUserById(int userId)
+        {
+            try
+            {
+                User? user = await _dbContext.Users.Include(u => u.UserDetails)
+                    .FirstOrDefaultAsync(u => u.Id == userId && u.IsActive == false);
+                if (user != null)
+                {
+                    user.IsActive = true;
+                    user.UpdatedAt = DateTime.Now;
+
+                    UserDetail? userDetail = user?.UserDetails.FirstOrDefault();
+                    userDetail.UpdatedAt = DateTime.Now;
+                    userDetail.IsActive = true;
+
+                    return await _dbContext.SaveChangesAsync();
+                }
+                return 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("An Error occurred while unblocking user\n" + e.Message);
+                return -1;
+            }
+        }
+
+
         // Assign manager to warehouse 
         public async Task<int> AssignManagerToWarehouse(int managerId, int warehouseId)
         {

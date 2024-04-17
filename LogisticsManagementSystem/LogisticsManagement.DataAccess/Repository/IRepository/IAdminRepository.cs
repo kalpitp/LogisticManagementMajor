@@ -18,6 +18,9 @@ namespace LogisticsManagement.DataAccess.Repository.IRepository
         Task<List<User>> GetPendingUsersByRoleId(int userRoleId); // Get all pending users by role id
         Task<int> UpdateSignUpRequest(int userIdToUpdate, int updatedState); // Update user's signup request status to approved or rejected
         Task<int> DeleteUserById(int userIdToDelete); // Delete user by id
+
+        Task<int> UnBlockUserById(int userId); // Delete user by id
+
         Task<int> AssignManagerToWarehouse(int managerId, int warehouseId); // Assign manager to warehouse
 
         Task<int> GetTotalUsersCount(int userRoleId); // Get total users count by role

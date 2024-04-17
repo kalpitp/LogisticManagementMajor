@@ -1,0 +1,100 @@
+<div class="container-fluid">
+  <div class="h2">
+    Dashboard
+    <hr />
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl col-md-6 col-12 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="align-items-center row">
+            <div class="col">
+              <h6 class="text-uppercase text-muted mb-2">Total Sales</h6>
+              <span class="h2 mb-0">{{
+                statisticsData.totalSalesAmount | currency : "INR"
+              }}</span>
+            </div>
+            <div class="col-auto">
+              <img
+                src="../../../../assets/Images/Common/sales2_svg.svg"
+                alt=""
+                height="50px"
+                width="50px"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl col-md-6 col-12 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="align-items-center row">
+            <div class="col">
+              <h6 class="text-uppercase text-muted mb-2">Completed Orders</h6>
+              <span class="h2 mb-0">{{ statisticsData.totalOrdersCount }}</span>
+            </div>
+            <div class="col-auto">
+              <img
+                src="../../../../assets/Images/Common/cart2_svg.svg"
+                alt=""
+                height="50px"
+                width="50px"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl col-md-6 col-12 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="align-items-center row">
+            <div class="col">
+              <h6 class="text-uppercase text-muted mb-2">users</h6>
+              <span class="h2 mb-0">{{
+                statisticsData.customersCount +
+                  statisticsData.driversCount +
+                  statisticsData.managersCount
+              }}</span>
+            </div>
+            <div class="col-auto">
+              <img
+                src="../../../../assets/Images/Common/user_svg.svg"
+                alt=""
+                height="50px"
+                width="50px"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl col-md-6 col-12 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <div class="align-items-center row">
+            <div class="col">
+              <h6 class="text-uppercase text-muted mb-2">Warehouses</h6>
+              <span class="h2 mb-0">{{ statisticsData.warehousesCount }}</span>
+            </div>
+            <div class="col-auto">
+              <img
+                src="../../../../assets/Images/Common/warehouse_svg.svg"
+                alt=""
+                height="50px"
+                width="50px"
+                class="img-fluid"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

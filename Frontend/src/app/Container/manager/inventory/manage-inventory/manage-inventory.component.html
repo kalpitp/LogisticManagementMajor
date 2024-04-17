@@ -1,0 +1,70 @@
+<div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add Inventory</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="InventoryForm" (ngSubmit)="onFormSubmit()">
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" formControlName="name" id="name"
+                                placeholder="Enter Name">
+                            <label for="name">Name</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="">
+                            <select class="form-select form-control p-3" formControlName="category" id="category"
+                                aria-label="Default select example">
+                                <option selected value="default">Select Category</option>
+                                <option *ngFor="let item of inventoryCategories" [value]="item.name">{{item.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating">
+                            <textarea class="form-control" formControlName="description" placeholder="Enter Description"
+                                id="description" style="height: 100px"></textarea>
+                            <label for="description">Description</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" formControlName="quantity" id="quantity"
+                                placeholder="Enter Name">
+                            <label for="quantity">Quantity</label>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            <input type="number" class="form-control" formControlName="price" id="price"
+                                placeholder="Enter Name">
+                            <label for="price">Price</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <input class="form-control form-control-md" formControlName="imageURL" id="productImage"
+                                type="file" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer mt-4">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Send message</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

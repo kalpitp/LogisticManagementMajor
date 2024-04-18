@@ -4110,11 +4110,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj",
+      "projectUniqueName": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj",
       "projectName": "LogisticsManagement.DataAccess",
-      "projectPath": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj",
+      "projectPath": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj",
       "packagesPath": "C:\\Users\\kalpitp\\.nuget\\packages\\",
-      "outputPath": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\obj\\",
+      "outputPath": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

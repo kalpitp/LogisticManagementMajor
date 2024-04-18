@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LogisticsManagement.DataAccess
-build_property.ProjectDir = D:\Major Project\LogisticsManagementSystem\LogisticsManagement.DataAccess\
+build_property.ProjectDir = D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.DataAccess\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

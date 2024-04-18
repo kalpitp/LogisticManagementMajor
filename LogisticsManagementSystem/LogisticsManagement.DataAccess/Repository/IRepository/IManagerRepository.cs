@@ -38,5 +38,27 @@ namespace LogisticsManagement.DataAccess.Repository.IRepository
         public Task<int> AddVehicle(Vehicle vehicle);
         public Task<int> RemoveVehicle(int id);
         #endregion
+
+
+        #region Statistics
+        public Task<decimal?> GetInvenoryCount();
+        public Task<int?> GetInvetoryCategoryCount();
+        public Task<int?> GetVehicleCount();
+        public Task<int?> GetAvailableVehicleCount();
+        public Task<int?> GetVehicleTypeCount();
+        public Task<int?> GetDriverCount();
+        public Task<int?> GetAvailableDriverCount();
+        public Task<int?> GetOrderCount();
+        public Task<int?> GetPendingOrderCount();
+        #endregion
+
+        #region Resource Mapping
+        public Task<int> AssignOrder(ResourceMapping assignment);
+        public Task<List<ResourceMapping>> getAssignedOrders();
+        #endregion
+
+        #region Manage Orders
+        public Task<List<Order>?> getOrders();
+        #endregion
     }
 }

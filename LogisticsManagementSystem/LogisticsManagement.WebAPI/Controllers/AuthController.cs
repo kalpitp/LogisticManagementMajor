@@ -101,7 +101,7 @@ namespace LogisticsManagement.WebAPI.Controllers
                 Console.WriteLine(ex.Message);
 
             }
-            return StatusCode(StatusCodes.Status500InternalServerError, ApiResponseHelper.Response(false, HttpStatusCode.InternalServerError, null, "Internal server error while creating user"));
+            return StatusCode(StatusCodes.Status500InternalServerError, ApiResponseHelper.Response(false, HttpStatusCode.InternalServerError, null, "Internal server error while signing up"));
         }
 
 

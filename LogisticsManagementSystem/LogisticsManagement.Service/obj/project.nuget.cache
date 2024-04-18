@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MsyZlbPnkWpxukzTPQ3JLCN2uq9jL9TpF0ntkQLTCXqL80w4uq/O1OBa6HcqX2uUrgTARg3YLcSHl/j72tNaUg==",
+  "dgSpecHash": "KRROuhVh0n0xmSO581VLydUpSgpE1ZNguQii4h610TXtSyFErtW8iMXfOKtG18qqpUOws+FPzieHB0YDAvs6Xg==",
   "success": true,
-  "projectFilePath": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\LogisticsManagement.Service.csproj",
+  "projectFilePath": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.Service\\LogisticsManagement.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kalpitp\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

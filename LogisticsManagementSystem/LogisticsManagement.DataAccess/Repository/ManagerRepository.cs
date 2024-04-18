@@ -112,7 +112,7 @@ namespace LogisticsManagement.DataAccess.Repository
         }
         #endregion
 
-        
+
 
         // Manage Inventory
         #region Manage Inventory
@@ -121,7 +121,7 @@ namespace LogisticsManagement.DataAccess.Repository
         {
             try
             {
-                return await _db.Inventories.Where(inv => inv.IsActive == true).ToListAsync();
+                return await _db.Inventories.Include(c=>c.Category).Where(inv => inv.IsActive == true).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -345,6 +345,203 @@ namespace LogisticsManagement.DataAccess.Repository
                 Console.WriteLine("An Error Occurred While Removing Vehicle.");
                 return -1;
             }
+        }
+        #endregion
+
+
+        // Statistics
+        #region Statistics
+        public async Task<decimal?> GetInvenoryCount()
+        {
+            try
+            {
+                decimal count =  _db.Inventories.Sum(i => i.Stock);
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Inventory Count.");
+                return -1;
+            }
+        }
+        public async Task<int?> GetInvetoryCategoryCount()
+        {
+            try
+            {
+                int count = await _db.InventoryCategories.Where(i => i.IsActive == true).CountAsync();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Inventory Category Count.");
+                return -1;
+            }
+        }
+        public async Task<int?> GetVehicleCount()
+        {
+            try
+            {
+                int count = await _db.Vehicles.Where(i => i.IsActive == true).CountAsync();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Vehicle Count.");
+                return -1;
+            }
+        }
+        public async Task<int?> GetAvailableVehicleCount()
+        {
+            try
+            {
+                int count = await _db.Vehicles.Where(i => i.IsActive == true).CountAsync();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Vehicle Count.");
+                return -1;
+            }
+        }
+        public async Task<int?> GetVehicleTypeCount()
+        {
+            try
+            {
+                int count = await _db.Vehicles.Where(u => u.IsActive == true && u.IsAvailable == true).CountAsync();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Vehicle Type Count.");
+                return -1;
+            }
+        }
+        public async Task<int?> GetDriverCount()
+        {
+            try
+            {
+                int count = await _db.Users.Where(u => u.IsActive == true  && u.RoleId == 3).CountAsync();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Drivers Count.");
+                return -1;
+            }
+        }
+        public async Task<int?> GetAvailableDriverCount()
+        {
+            try
+            {
+                int count = await _db.Users.Where(u => u.IsActive == true && u.RoleId == 3 && u.UserDetails.All(d=>d.IsAvailable == true)).CountAsync();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Drivers Count.");
+                return -1;
+            }
+        }
+        public async Task<int?> GetOrderCount()
+        {
+            try
+            {
+                int count = await _db.Orders.CountAsync();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Inventory Count.");
+                return -1;
+            }
+        }
+        public async Task<int?> GetPendingOrderCount()
+        {
+            try
+            {
+                int count = await _db.Orders.Where(o => o.OrderDetails.All(od => od.OrderStatus.Status == "Pending")).CountAsync();
+                return count;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Inventory Count.");
+                return -1;
+            }
+        }
+        #endregion
+
+
+        #region Resource Mapping
+        public async Task<int> AssignOrder(ResourceMapping assignment)
+        {
+            try
+            {
+                // driver isAvailable = false
+                UserDetail? userDetail = await _db.UserDetails.FirstOrDefaultAsync(d => d.UserId == assignment.DriverId);
+                userDetail.IsAvailable = false;
+                _db.UserDetails.Update(userDetail);
+
+                // change order status
+                OrderDetail orderDetail = await _db.OrderDetails.FirstOrDefaultAsync(o => o.OrderId == assignment.OrderId);
+                orderDetail.OrderStatusId = 2;
+                _db.OrderDetails.Update(orderDetail);
+
+                // vehicle isAvailable false
+                Vehicle vehicle = await _db.Vehicles.FirstOrDefaultAsync(v => v.Id == assignment.VehicleId);
+                vehicle.IsAvailable = false;
+                _db.Vehicles.Update(vehicle);
+
+                _db.ResourceMappings.Add(assignment);
+                return _db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+        }
+        public async Task<List<ResourceMapping>> getAssignedOrders()
+        {
+            try
+            {
+                return await _db.ResourceMappings.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Inventory Categories.");
+                return null;
+            }
+        }
+        #endregion
+
+
+        #region Manage Orders
+        public async Task<List<Order>?> getOrders()
+        {
+            try
+            {
+                return await _db.Orders.Include(u=>u.User)
+                                       .Include(o => o.OrderDetails)
+                                       .ThenInclude(i=>i.Inventory)
+                                       //.ThenInclude(d => d.OrderStatus)
+                                       .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching Inventories.");
+                return null;
+            };
         }
         #endregion
     }

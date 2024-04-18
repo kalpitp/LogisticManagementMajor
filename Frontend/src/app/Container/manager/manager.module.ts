@@ -16,47 +16,57 @@ import { HttpClientModule } from '@angular/common/http';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { ManageInventoryComponent } from './inventory/manage-inventory/manage-inventory.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ManageInventoryCategoryComponent } from './inventory-category/manage-inventory-category/manage-inventory-category.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { AllocatedResourceComponent } from './allocated-resource/allocated-resource.component';
 
 @NgModule({
   declarations: [
-    ManagerComponent,
+    // ManagerComponent,
     InventoryComponent,
     DashboardComponent,
-    SideNavComponent,
     InventoryCategoryComponent,
     VehicleComponent,
     VehicleTypeComponent,
     OrderComponent,
     DriverComponent,
     ResourceAssignmentComponent,
-    NavbarComponent,
-    ManageInventoryComponent
+    // SideNavComponent,
+    // NavbarComponent,
+    ManageInventoryComponent,
+    ManageInventoryCategoryComponent,
+    AllocatedResourceComponent,
   ],
   imports: [
     CommonModule,
     ManagerRoutingModule,
     HttpClientModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatTableModule,
     MatSortModule,
-    MatIconModule,
-    ReactiveFormsModule
+    MatPaginatorModule,
   ],
-  exports:[
-    ManagerComponent,
+  exports: [
     InventoryComponent,
     DashboardComponent,
-    SideNavComponent,
     InventoryCategoryComponent,
     VehicleComponent,
     VehicleTypeComponent,
     OrderComponent,
     DriverComponent,
     ResourceAssignmentComponent,
-    NavbarComponent
-  ]
+    // ManagerComponent,
+    // SideNavComponent,
+    // NavbarComponent,
+  ],
 })
-export class ManagerModule { }
+export class ManagerModule {}

@@ -85,8 +85,6 @@ namespace LogisticsManagement.Service.Services
             }
         }
 
-   
-
         public async Task<int> RemoveAddressAsync(int addressId)
         {
             try
@@ -129,6 +127,48 @@ namespace LogisticsManagement.Service.Services
             }
         }
 
+        public async Task<List<CityDTO>?> ViewAllCitiesAsync()
+        {
+            try
+            {
+                List<City> cities = await _customerRepository.GetAllCities();
+                return _mapper.Map<List<CityDTO>>(cities);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while fetching cities" + ex.Message);
+                return null;
+            }
+        }
+
+        public async Task<List<StateDTO>?> ViewAllStatesAsync()
+        {
+            try
+            {
+                List<State> states = await _customerRepository.GetAllStates();
+                return _mapper.Map<List<StateDTO>>(states);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while fetching states" + ex.Message);
+                return null;
+            }
+        }
+
+        public async Task<List<CountryDTO>?> ViewAllCountriesAsync()
+        {
+            try
+            {
+                List<Country> countries = await _customerRepository.GetAllCountries();
+                return _mapper.Map<List<CountryDTO>>(countries);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while fetching countries" + ex.Message);
+                return null;
+            }
+        }
+        
         public async Task<List<OrderDTO>?> ViewOrderDetails(int orderId)
         {
             try
@@ -146,6 +186,47 @@ namespace LogisticsManagement.Service.Services
             {
                 Console.WriteLine("Error occurred while fetching the order details. " + ex.Message);
                 return null;
+            }
+        }
+
+        public async Task<List<OrderDTO>?> ViewAllOrdersAsync(int customerId)
+        {
+            try
+            {
+                List<OrderDetail>? allOrders = await _customerRepository.GetAllOrders(customerId);
+
+                if (allOrders is null || allOrders.Count == 0)
+                {
+                    return null;
+                }
+
+                return _mapper.Map<List<OrderDTO>>(allOrders);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while fetching the orders" + ex.Message);
+                return null;
+            }
+        }
+
+        public async Task<int> AddOrderAsync(OrderDTO order)
+        {
+            try
+            {
+                if (order == null)
+                    return -1;
+                Order newOrder = _mapper.Map<Order>(order);
+                OrderDetail newOrderDetail = _mapper.Map<OrderDetail>(order);
+
+
+                int addedOrderId = await _customerRepository.AddOrder(newOrderDetail, newOrder);
+
+                return addedOrderId;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while adding Order" + ex.Message);
+                return -1;
             }
         }
     }

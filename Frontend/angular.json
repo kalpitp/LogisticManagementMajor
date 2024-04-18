@@ -37,11 +37,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/sweetalert2/dist/sweetalert2.min.css",
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss",
               "node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/sweetalert2/dist/sweetalert2.min.js"
+            ]
           },
           "configurations": {
             "production": {

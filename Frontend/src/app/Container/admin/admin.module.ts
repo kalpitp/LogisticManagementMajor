@@ -13,9 +13,15 @@ import { ManagerListComponent } from './manager-list/manager-list.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DriverListComponent } from './driver-list/driver-list.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { NavbarComponent } from '../../Components/navbar/navbar.component';
+import { SideNavComponent } from '../../Components/side-nav/side-nav.component';
+import { AdminComponent } from './admin.component';
 
 @NgModule({
   declarations: [
+    // AdminComponent,
+    // NavbarComponent,
+    // SideNavComponent,
     DashboardComponent,
     SignupRequestComponent,
     SignupRequestTableComponent,
@@ -33,6 +39,16 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
     MatIconModule,
     MatTooltipModule,
   ],
-  exports: [DashboardComponent],
+  exports: [
+    DashboardComponent,
+    SignupRequestComponent,
+    SignupRequestTableComponent,
+    ManagerListComponent,
+    DriverListComponent,
+    CustomerListComponent,
+    // AdminComponent,
+    // NavbarComponent,
+    // SideNavComponent,
+  ],
 })
 export class AdminModule {}

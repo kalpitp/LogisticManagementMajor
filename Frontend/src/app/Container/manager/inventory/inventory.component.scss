@@ -1,51 +1,31 @@
 table {
-    width: 100%;
+  width: 100%;
 
-    th.mat-sort-header-sorted {
-      color: black;
-    }
-    
+  th.mat-sort-header-sorted {
+    color: black;
   }
-  
-.header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  margin-bottom: 2rem;
-  border-radius: 0.5rem;
-  background-color: #ffffff;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-
-.add-button{
-  background-color: initial;
-  background-image: linear-gradient(#8614f8 0, #760be0 100%);
-  border-radius: 5px;
-  border-style: none;
-  box-shadow: rgba(245, 244, 247, .25) 0 1px 1px inset;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Inter, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  height: 60px;
-  line-height: 60px;
-  margin-left: -4px;
-  outline: 0;
+.action {
+  display: flex;
   text-align: center;
-  transition: all .3s cubic-bezier(.05, .03, .35, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: bottom;
-  width: 190px;
+  justify-content: space-around;
+}
+.action_contain {
+  margin-left: 2rem;
+  div {
+    mat-icon {
+      margin: 0 1rem;
+    }
+  }
 }
 
 .add-button:hover {
-  opacity: .7;
+  opacity: 0.7;
+}
+
+mat-icon:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1000px) {
@@ -55,4 +35,43 @@ table {
     line-height: 55px;
     width: 150px;
   }
+}
+
+.notFound {
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.example-container {
+  max-width: 100%;
+  overflow: auto;
+}
+
+table {
+  width: 800px;
+}
+
+td.mat-column-star {
+  width: 20px;
+  padding-right: 8px;
+}
+
+th.mat-column-position,
+td.mat-column-position {
+  padding-left: 8px;
+}
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-mdc-table-sticky-border-elem-right {
+  border-left: 1px solid #e0e0e0;
+}
+
+.mat-mdc-table-sticky-border-elem-left {
+  border-right: 1px solid #e0e0e0;
 }

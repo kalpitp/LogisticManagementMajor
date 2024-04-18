@@ -13,7 +13,6 @@ export class User {
     public isApproved: number,
     public isActive: boolean,
     public createdAt: Date | null,
-    public updatedAt: Date | null,
-    public wareHouseName?: string | null
+    public updatedAt: Date | null
   ) {}
 }

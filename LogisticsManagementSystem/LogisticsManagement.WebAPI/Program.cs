@@ -43,6 +43,9 @@ namespace LogisticsManagement.WebAPI
             builder.Services.AddScoped<IManagerService, ManagerService>();
 
 
+            builder.Services.AddScoped<IDriverRepository, DriverRepository>();
+            builder.Services.AddScoped<IDriverService, DriverService>();
+
             //JWT Configuration
             builder.Services.AddAuthentication(options =>
             {

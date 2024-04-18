@@ -1,8 +1,8 @@
 <div class="side-nav">
   <div class="side-nav_bg-image">
-    <img src="../../../assets/Images/Common/mountain_bg_4.jpg" alt="" />
+    <!-- <img src="../../../assets/Images/Common/mountain_bg_4.jpg" alt=""> -->
   </div>
-  <!-- <div class="side-nav_bg-color"></div> -->
+  <div class="side-nav_bg-color"></div>
 
   <div class="logo">
     <h4 *ngIf="commonService.sideBar">
@@ -36,7 +36,7 @@
       </div>
 
       <div class="user-name" *ngIf="commonService.sideBar">
-        <span>User Name</span>
+        <span>{{ userName ? "Hello, " + userName : "User Name" }}</span>
         <div class="user-dropdown-icons">
           <div class="down" *ngIf="userDropdownIcon == false; else userElse">
             <svg
@@ -90,7 +90,7 @@
         <span *ngIf="commonService.sideBar">My Profile</span>
       </div>
 
-      <div class="logout">
+      <div class="logout" (click)="logout()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"

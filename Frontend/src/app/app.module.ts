@@ -8,7 +8,7 @@ import { CustomerComponent } from './Container/customer/customer.component';
 import { AuthComponent } from './Container/auth/auth.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { ManagerModule } from './Container/manager/manager.module';
+
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatTableModule } from '@angular/material/table';
@@ -16,6 +16,10 @@ import { AdminModule } from './Container/admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
+import { AuthModule } from './Container/auth/auth.module';
+import { SideNavComponent } from './Components/side-nav/side-nav.component';
+import { ManagerComponent } from './Container/manager/manager.component';
+import { ManagerModule } from './Container/manager/manager.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { ToastrModule } from 'ngx-toastr';
     AdminComponent,
     DriverComponent,
     CustomerComponent,
+    ManagerComponent,
     AuthComponent,
+    NavbarComponent,
+    SideNavComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -32,6 +39,7 @@ import { ToastrModule } from 'ngx-toastr';
     CommonModule,
     ManagerModule,
     AdminModule,
+    AuthModule,
     MatTableModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),

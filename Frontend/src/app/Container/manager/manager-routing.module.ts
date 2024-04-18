@@ -10,27 +10,31 @@ import { VehicleTypeComponent } from './vehicle-type/vehicle-type.component';
 import { OrderComponent } from './order/order.component';
 import { DriverComponent } from './driver/driver.component';
 import { ResourceAssignmentComponent } from './resource-assignment/resource-assignment.component';
+import { AllocatedResourceComponent } from './allocated-resource/allocated-resource.component';
+import { ManagerGuard } from '../../Services/Guards/manager-guard.service';
 
 const routes: Routes = [
   {
     path: 'manager',
     component: ManagerComponent,
+    canActivate: [ManagerGuard],
     children: [
-      { path: '',redirectTo:'dashboard',pathMatch:'full'},
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       { path: 'inventory', component: InventoryComponent },
       { path: 'inventory-category', component: InventoryCategoryComponent },
       { path: 'vehicle', component: VehicleComponent },
       { path: 'vehicle-type', component: VehicleTypeComponent },
-      { path: 'order', component: OrderComponent},
-      { path: 'available-driver', component: DriverComponent},
-      { path: 'resource-assignment', component: ResourceAssignmentComponent},
-    ]
-  }
+      { path: 'order', component: OrderComponent },
+      { path: 'available-driver', component: DriverComponent },
+      { path: 'resource-assignment', component: ResourceAssignmentComponent },
+      { path: 'allocated-resource', component: AllocatedResourceComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class ManagerRoutingModule { }
+export class ManagerRoutingModule {}

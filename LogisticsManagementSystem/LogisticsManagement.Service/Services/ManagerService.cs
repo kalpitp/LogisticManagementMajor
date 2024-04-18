@@ -205,7 +205,15 @@ namespace LogisticsManagement.Service.Services
             try
             {
                 List<Vehicle>? vehicles = await _managerRepo.GetVehicles();
-                return _mapper.Map<List<VehicleDTO>>(vehicles);
+                List<VehicleDTO> vehicleDTOs = new List<VehicleDTO>();
+
+                foreach (var vehicle in vehicles)
+                {
+                    vehicleDTOs.Add(
+                        ApplicationMapper.MapVehicleToVehicleDTO(vehicle)
+                    ) ;
+                }
+                return vehicleDTOs;
             }
             catch (Exception ex)
             {
@@ -242,6 +250,104 @@ namespace LogisticsManagement.Service.Services
                 return -1;
             }
         }
+        #endregion
+
+
+
+        #region Statistics
+        public async Task<ManagerSummaryStatisticsDTO?> GetManagerStatistics()
+        {
+            try
+            {
+                decimal? InventoryCount = await _managerRepo.GetInvenoryCount();   
+                int? InventoryCategoryCount = await _managerRepo.GetInvetoryCategoryCount();   
+                int? VehicleCount = await _managerRepo.GetVehicleCount();   
+                int? AvailableVehicleCount = await _managerRepo.GetAvailableVehicleCount();   
+                int? VehicleTypeCount = await _managerRepo.GetVehicleTypeCount();   
+                int? DriverCount = await _managerRepo.GetDriverCount();   
+                int? AvailableDriverCount = await _managerRepo.GetAvailableDriverCount();   
+                int? OrderCount = await _managerRepo.GetOrderCount();   
+                int? PendingOrderCount = await _managerRepo.GetPendingOrderCount();
+
+                return new ManagerSummaryStatisticsDTO()
+                {
+                    InventoryCount = (decimal)InventoryCount,
+                    InventoryCategoryCount = (int)InventoryCategoryCount,
+                    VehicleCount = (int)VehicleCount,
+                    AvailableVehicleCount = (int)AvailableVehicleCount,
+                    VehicleTypeCount = (int)VehicleTypeCount,
+                    DriverCount = (int)DriverCount,
+                    AvailableDriverCount = (int)AvailableDriverCount,
+                    OrderCount = (int)OrderCount,
+                    PendingOrderCount = (int)PendingOrderCount
+                };
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Ërror occurred while fetching manager statistics.");
+                return null;
+            }
+        }
+        #endregion
+
+
+
+        #region Manage Orders
+        public async Task<List<OrderDTO>?> getOrders()
+        {
+            try
+            {
+                List<Order>? orders = await _managerRepo.getOrders();
+                return _mapper.Map<List<OrderDTO>>(orders);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching orders from service. ");
+                return null;
+            }
+        }
+        #endregion
+
+
+
+        #region Resource Mapping
+        public async Task<int> AssignOrder(ResourceMappingDTO assignment)
+        {
+            try
+            {
+                ResourceMapping res = ApplicationMapper.MapResourceMappingDTOtoResouceMapping(assignment);
+                return await _managerRepo.AssignOrder(res);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return -1;
+            }
+        }
+        public async Task<List<ResourceMappingDTO>> getAssignedOrders()
+        {
+            try
+            {
+                List<ResourceMapping>? assignedOrders = await _managerRepo.getAssignedOrders();
+                List<ResourceMappingDTO> resourceMappingDTOs = new List<ResourceMappingDTO>();
+
+                foreach(ResourceMapping resourceMapping in assignedOrders)
+                {
+                    resourceMappingDTOs.Add(ApplicationMapper.MapResourceMappingtoResouceMappingDTO(resourceMapping));
+                }
+                return resourceMappingDTOs;
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("An Error Occurred While Fetching orders from service. ");
+                return null;
+            }
+        }
+
         #endregion
     }
 }

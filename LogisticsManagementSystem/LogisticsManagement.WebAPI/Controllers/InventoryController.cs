@@ -1,9 +1,14 @@
 ﻿using Azure;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 using LogisticsManagement.Service.DTOs;
 using LogisticsManagement.Service.Services.IServices;
 using LogisticsManagement.WebAPI.Utilities;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.SqlServer.Server;
 using System.Net;
 
 namespace LogisticsManagement.WebAPI.Controllers
@@ -14,9 +19,11 @@ namespace LogisticsManagement.WebAPI.Controllers
     {
 
         private readonly IManagerService _managerService;
-        public InventoryController(IManagerService managerService)
+        private readonly string _imagesFolderPath;
+        public InventoryController(IManagerService managerService, IWebHostEnvironment webHostEnvironment)
         {
             _managerService = managerService;
+            _imagesFolderPath = Path.Combine(webHostEnvironment.ContentRootPath, "Images");
         }
 
 
@@ -231,5 +238,75 @@ namespace LogisticsManagement.WebAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ApiResponseHelper.Response(false, HttpStatusCode.InternalServerError, null, ex.Message));
             }
         }
+
+
+
+
+        [HttpPost("upload")]
+        public async Task<IActionResult> UploadImage(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("Please select a file to upload.");
+            }
+
+            var filePath = Path.GetTempFileName();
+
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await file.CopyToAsync(stream);
+            }
+
+            Account? account = new Account(
+                    "drtbueipf",
+                    "358663862986994",
+                    "ebP9onw4YQHKpL3lcCihcUcdz90");
+
+            Cloudinary cloudinary = new Cloudinary(account);
+
+            var result = cloudinary.Upload(new ImageUploadParams()
+            {
+                File = new FileDescription(filePath),
+                PublicId = Guid.NewGuid().ToString()
+            });
+            Console.WriteLine("Result " + result);
+            return Ok(ApiResponseHelper.Response(true, HttpStatusCode.OK, data: result.Url));
+        }
+
+
+
+        //[HttpPost("upload-local")]
+        //public async Task<IActionResult> UploadImageLocal(IFormFile file)
+        //{
+        //    if (file == null || file.Length == 0)
+        //        return BadRequest("No file uploaded.");
+
+        //    try
+        //    {
+        //        if (!Directory.Exists(_imagesFolderPath))
+        //            Directory.CreateDirectory(_imagesFolderPath);
+
+        //        var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+        //        var filePath = Path.Combine(_imagesFolderPath, fileName);
+
+        //        using (var stream = new FileStream(filePath, FileMode.Create))
+        //        {
+        //            await file.CopyToAsync(stream);
+        //        }
+
+        //        var imagePath = Path.GetFullPath(filePath);
+        //        return Ok(new { imagePath });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, $"Internal server error: {ex.Message}");
+        //    }
+        //}
+
+
+
+
     }
+
 }

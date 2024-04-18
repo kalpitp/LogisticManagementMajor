@@ -16,12 +16,12 @@ namespace LogisticsManagement.Service.DTOs
         [MaxLength(50)]
         public string Name { get; set; } 
 
-        public string Image { get; set; }
+        public string? Image { get; set; }
 
         public string? Description { get; set; }
 
         [Required]
-        [Range(0, 500,ErrorMessage = "stock should be between 0 to 500")]
+        [Range(0, 5000,ErrorMessage = "stock should be between 0 to 500")]
         public int Stock { get; set; }
 
         [Required]
@@ -31,8 +31,6 @@ namespace LogisticsManagement.Service.DTOs
         public int CategoryId { get; set; }
 
    
-        [MinLength(2)]
-        [MaxLength(50)]
         public string? CategoryName { get; set; }
 
         public int WarehouseId { get; set; }

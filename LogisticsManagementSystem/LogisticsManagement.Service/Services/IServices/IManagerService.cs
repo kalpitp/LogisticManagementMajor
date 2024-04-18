@@ -34,11 +34,25 @@ namespace LogisticsManagement.Service.Services.IServices
         #endregion
 
 
-
         #region Manage Vehicles
         public Task<List<VehicleDTO>?> GetVehicles();
         public Task<int> AddVehicle(VehicleDTO vehicle);
         public Task<int> RemoveVehicle(int id);
+        #endregion
+
+
+        #region Statistics
+        public Task<ManagerSummaryStatisticsDTO?> GetManagerStatistics();
+        #endregion
+
+
+        #region Resource Mapping
+        public Task<int> AssignOrder(ResourceMappingDTO assignment);
+        public Task<List<ResourceMappingDTO>> getAssignedOrders();
+        #endregion
+
+        #region Manage Order 
+        public Task<List<OrderDTO>?> getOrders();
         #endregion
     }
 }

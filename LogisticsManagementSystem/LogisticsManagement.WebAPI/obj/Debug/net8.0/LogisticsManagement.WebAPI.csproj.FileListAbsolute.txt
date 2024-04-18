@@ -818,3 +818,4 @@ D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManage
 D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.WebAPI\obj\Debug\net8.0\Logistic.90B28B2E.Up2Date
 D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.WebAPI\obj\Debug\net8.0\LogisticsManagement.WebAPI.genruntimeconfig.cache
 D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.WebAPI\obj\Debug\net8.0\ref\LogisticsManagement.WebAPI.dll
+D:\Project\Major Project\Azure\Backend\LogisticsManagementSystem\LogisticsManagement.WebAPI\bin\Debug\net8.0\CloudinaryDotNet.dll

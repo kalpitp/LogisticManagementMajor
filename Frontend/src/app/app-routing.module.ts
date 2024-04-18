@@ -6,15 +6,14 @@ import { CustomerComponent } from './Container/customer/customer.component';
 import { AuthComponent } from './Container/auth/auth.component';
 
 const routes: Routes = [
-  {path:'', pathMatch:"full", redirectTo:'customer'},
-  {path:'admin', component:AdminComponent},
-  {path:'driver', component:DriverComponent},
-  {path:'customer', component:CustomerComponent},
-  {path:'auth', component:AuthComponent}
+  { path: '', pathMatch: 'full', redirectTo: 'customer' },
+  // { path: 'admin', component: AdminComponent },
+  { path: 'driver', component: DriverComponent },
+  { path: 'customer', component: CustomerComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

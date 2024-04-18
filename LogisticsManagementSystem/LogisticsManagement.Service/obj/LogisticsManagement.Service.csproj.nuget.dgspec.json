@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\LogisticsManagement.Service.csproj": {}
+    "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.Service\\LogisticsManagement.Service.csproj": {}
   },
   "projects": {
-    "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj": {
+    "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj",
+        "projectUniqueName": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj",
         "projectName": "LogisticsManagement.DataAccess",
-        "projectPath": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj",
+        "projectPath": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj",
         "packagesPath": "C:\\Users\\kalpitp\\.nuget\\packages\\",
-        "outputPath": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\obj\\",
+        "outputPath": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -83,14 +83,14 @@
         }
       }
     },
-    "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\LogisticsManagement.Service.csproj": {
+    "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.Service\\LogisticsManagement.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\LogisticsManagement.Service.csproj",
+        "projectUniqueName": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.Service\\LogisticsManagement.Service.csproj",
         "projectName": "LogisticsManagement.Service",
-        "projectPath": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\LogisticsManagement.Service.csproj",
+        "projectPath": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.Service\\LogisticsManagement.Service.csproj",
         "packagesPath": "C:\\Users\\kalpitp\\.nuget\\packages\\",
-        "outputPath": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.Service\\obj\\",
+        "outputPath": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -110,8 +110,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj": {
-                "projectPath": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj"
+              "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj": {
+                "projectPath": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj"
               }
             }
           }

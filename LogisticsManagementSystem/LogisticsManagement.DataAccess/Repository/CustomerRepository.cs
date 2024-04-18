@@ -73,7 +73,6 @@ namespace LogisticsManagement.DataAccess.Repository
             }
             return null;
         }
-
         public async Task<List<Address>?> GetAllAddresses()
         {
             try
@@ -90,7 +89,6 @@ namespace LogisticsManagement.DataAccess.Repository
                 return null;
             }
         }
-
         public async Task<int> UpdateAddress(Address address)
         {
             try
@@ -124,8 +122,6 @@ namespace LogisticsManagement.DataAccess.Repository
                 return -1;
             }
         }
-
-
         public async Task<int> RemoveAddress(int addressId)
         {
             try
@@ -168,7 +164,6 @@ namespace LogisticsManagement.DataAccess.Repository
                 return -1;
             }
         }
-
         public async Task<List<OrderDetail>> GetAllOrderDetails(int orderId)
         {
             try
@@ -190,6 +185,75 @@ namespace LogisticsManagement.DataAccess.Repository
             catch (Exception ex)
             {
                 Console.WriteLine("Error occurred while fetching order details. " + ex.Message);
+                return null;
+            }
+        }
+        public async Task<List<City>> GetAllCities()
+        {
+            try
+            {
+                return await _dbContext.Cities.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while fetching Cities" + ex.Message);
+                return null;
+            }
+        }
+        public async Task<List<State>> GetAllStates()
+        {
+            try
+            {
+                return await _dbContext.States.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while fetching States" + ex.Message);
+                return null;
+            }
+        }
+        public async Task<List<Country>> GetAllCountries()
+        {
+            try
+            {
+                return await _dbContext.Countries.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error occurred while fetching Cities" + ex.Message);
+                return null;
+            }
+        }
+
+        public async Task<int> AddOrder(OrderDetail orderDetail, Order order)
+        {
+            try
+            {
+                await _dbContext.Orders.AddAsync(order);
+                orderDetail.Order = order;
+                await _dbContext.OrderDetails.AddAsync(orderDetail);
+
+                if (await _dbContext.SaveChangesAsync() > 0)
+                    return order.Id;
+
+                return 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while adding order: " + ex.Message);
+                return -2;
+            }
+        }
+
+        public async Task<List<OrderDetail>> GetAllOrders(int customerId)
+        {
+            try
+            {
+                return await _dbContext.OrderDetails.Include(o => o.Order).Include(i => i.Inventory).Where(u => u.Order.UserId == customerId).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An error occurred while fetching orders." + ex.Message);
                 return null;
             }
         }

@@ -6,11 +6,14 @@ import { SignupRequestComponent } from './signup-request/signup-request.componen
 import { ManagerListComponent } from './manager-list/manager-list.component';
 import { DriverListComponent } from './driver-list/driver-list.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { AdminGuard } from '../../Services/Guards/admin-guard.service';
+import { LoginGuard } from '../../Services/Guards/login-guard.service';
 
 const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [AdminGuard],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },

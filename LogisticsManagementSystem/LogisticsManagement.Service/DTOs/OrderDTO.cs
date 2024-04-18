@@ -8,13 +8,14 @@ namespace LogisticsManagement.Service.DTOs
 {
     public class OrderDTO
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
-        public int UserId { get; set; }
+        public int CustomerId { get; set; }
 
+        public string? UserName { get; set; }
         public DateTime? OrderDate { get; set; }
 
-        public decimal TotalAmount { get; set; }
+        public decimal? TotalAmount { get; set; }
 
         public bool? IsActive { get; set; }
 
@@ -22,9 +23,11 @@ namespace LogisticsManagement.Service.DTOs
 
         public DateTime? UpdatedAt { get; set; }
 
-        public int OrderDetailId { get; set; }
+        public int? OrderDetailId { get; set; }
 
         public int InventoryId { get; set; }
+
+        public string? InventoryName { get; set; }
 
         public int Quantity { get; set; }
 
@@ -41,8 +44,7 @@ namespace LogisticsManagement.Service.DTOs
         public DateTime? ActualArrivalTime { get; set; }
 
         public int StatusId { get; set; }
-        
-        public string Status { get; set; } = null!;
 
+        public string? Status { get; set; }
     }
 }

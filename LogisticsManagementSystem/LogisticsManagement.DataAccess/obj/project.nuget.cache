@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iy2DpVtKcxm2AZvhwhZQetaRWCTpSAj7KEFrDauj7DBLggZjcjGOpdx1Cef1ncBJpowgDyzTxq2nUVIGeETIZw==",
+  "dgSpecHash": "hvRoqFgJkIIxpZ9P0JAS/pcfucWuU02XmVkxa4uRts24JIvEI9eATy7GEIyI/DgVvOeJlA4ahW8pmLwR4XzZYw==",
   "success": true,
-  "projectFilePath": "D:\\Major Project\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj",
+  "projectFilePath": "D:\\Project\\Major Project\\Azure\\Backend\\LogisticsManagementSystem\\LogisticsManagement.DataAccess\\LogisticsManagement.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kalpitp\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\kalpitp\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
